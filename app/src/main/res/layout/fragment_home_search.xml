@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".HomeSearchFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <SearchView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="second"
+        android:background="@drawable/search_view_outline"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
