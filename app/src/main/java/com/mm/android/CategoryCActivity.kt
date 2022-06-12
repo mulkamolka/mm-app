@@ -2,10 +2,14 @@ package com.mm.android
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.mm.android.databinding.ActivityCategoryCactivityBinding
 
 class CategoryCActivity : AppCompatActivity() {
+
+    val binding by lazy { ActivityCategoryCactivityBinding.inflate(layoutInflater) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_category_cactivity)
+        setContentView(binding.root)
     }
 }

@@ -9,7 +9,7 @@ import com.mm.android.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen() // Activiy 확장함수
@@ -21,4 +21,3 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
-
