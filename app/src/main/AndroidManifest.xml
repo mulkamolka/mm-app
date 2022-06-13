@@ -10,21 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mm.Splash">
         <activity
+            android:name=".ItemDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Mm.NoActionbar" />
+        <activity
             android:name=".CategoryDActivity"
             android:exported="false"
-            android:theme="@style/Theme.Mm.NoActionbar"/>
+            android:theme="@style/Theme.Mm.NoActionbar" />
         <activity
             android:name=".CategoryCActivity"
             android:exported="false"
-            android:theme="@style/Theme.Mm.NoActionbar"/>
+            android:theme="@style/Theme.Mm.NoActionbar" />
         <activity
             android:name=".CategoryBActivity"
             android:exported="false"
-            android:theme="@style/Theme.Mm.NoActionbar"/>
+            android:theme="@style/Theme.Mm.NoActionbar" />
         <activity
             android:name=".CategoryAActivity"
             android:exported="false"
-            android:theme="@style/Theme.Mm.NoActionbar"/>
+            android:theme="@style/Theme.Mm.NoActionbar" />
         <activity
             android:name=".SearchActivity"
             android:exported="false"

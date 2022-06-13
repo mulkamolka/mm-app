@@ -21,6 +21,8 @@ class SearchResultFragment : Fragment() {
     ): View? {
         _binding = FragmentSearchResultBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        // 데이터를 불러온다
         val data: MutableList<market> = loadData()
         var adapter = SearchResultAdapter()
         adapter.listData = data
@@ -37,6 +39,7 @@ class SearchResultFragment : Fragment() {
     }
 }
 
+// 데이터를 불러오는 함수
 fun loadData(): MutableList<market> {
     val data: MutableList<market> = mutableListOf()
 
