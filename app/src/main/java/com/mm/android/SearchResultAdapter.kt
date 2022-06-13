@@ -1,6 +1,7 @@
 package com.mm.android
 
 import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import com.mm.android.databinding.ItemRecyclerBinding
 
 class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
     var listData = mutableListOf<market>()
+    var bundle = Bundle()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ItemRecyclerBinding.inflate(
@@ -51,24 +53,5 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
             binding.change.text = "${market.change}"
         }
     }
-}
 
-//// intent 구현을 위해 parent를 인자로 받음
-//inner class Holder(val binding: ItemRecyclerBinding, parent: ViewGroup) :
-//    RecyclerView.ViewHolder(binding.root) {
-//
-//    init {
-//        val context = parent.context
-//        binding.root.setOnClickListener {
-//            val intent = Intent(context, ItemDetailActivity::class.java)
-//            intent.putExtra("test", "")
-//            context.startActivity(intent)
-//        }
-//    }
-//
-//    fun setMarket(market: market) {
-//        binding.rank.text = "${market.rank}"
-//        binding.item.text = "${market.item}"
-//        binding.change.text = "${market.change}"
-//    }
-//}
+}

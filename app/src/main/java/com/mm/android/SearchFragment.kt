@@ -9,6 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.SearchView
+import androidx.core.os.bundleOf
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.setFragmentResult
 import com.mm.android.databinding.ActivitySearchBinding
 import com.mm.android.databinding.FragmentHomeSearchBinding
 import com.mm.android.databinding.FragmentSearchBinding
@@ -31,8 +34,15 @@ class SearchFragment : Fragment() {
         // 키보드 포커스를 요청
         searchInput.requestFocus()
 
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         // 검색 이벤트
-        searchInput.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+        binding.searchInput.setOnQueryTextListener(object :
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
 
             // 검색 버튼을 눌렀을 경우
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -41,16 +51,19 @@ class SearchFragment : Fragment() {
 
             // 텍스트가 바뀔 때 마다 호출
             override fun onQueryTextChange(newText: String?): Boolean {
-                Log.d("testt", "${newText}")
+                Log.d("testt", "hi ${newText}")
+                var bundle = bundleOf("valueKey" to "${newText}")
+                setFragmentResult("request", bundle)
                 return true
             }
         })
 
-        return view
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }
