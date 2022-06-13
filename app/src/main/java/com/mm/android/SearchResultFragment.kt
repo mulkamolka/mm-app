@@ -1,5 +1,6 @@
 package com.mm.android
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.view.get
+import androidx.core.view.size
 import androidx.fragment.app.setFragmentResultListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mm.android.databinding.FragmentHomeSearchBinding
@@ -31,7 +34,6 @@ class SearchResultFragment : Fragment() {
 
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
-
         return view
     }
 
@@ -55,7 +57,7 @@ class SearchResultFragment : Fragment() {
     fun loadData(): MutableList<market> {
         val data: MutableList<market> = mutableListOf()
 
-        for (rank in 1..50) {
+        for (rank in 1..100) {
             val item = "바나나"
             var change = rank - 50.5
             var market = market(rank, item, change)
