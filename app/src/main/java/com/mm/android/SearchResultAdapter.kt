@@ -3,7 +3,6 @@ package com.mm.android
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -29,12 +28,12 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
         holder.setMarket(market)
 
         // 변동률에 따른 색상 변경
-        if (holder.binding.change.text.toString().toDouble() > 0) {
-            holder.binding.change.setTextColor(Color.rgb(81,107,244))
-            holder.binding.change.setBackgroundColor(Color.rgb(232,242,255))
+        if (holder.binding.changeText.text.toString().toDouble() > 0) {
+            holder.binding.changeText.setTextColor(Color.rgb(81,107,244))
+            holder.binding.changeImage.setColorFilter(Color.parseColor("#E8F2FF"))
         } else {
-            holder.binding.change.setTextColor(Color.rgb(244,81,81))
-            holder.binding.change.setBackgroundColor(Color.rgb(255,232,232))
+            holder.binding.changeText.setTextColor(Color.rgb(244,81,81))
+            holder.binding.changeImage.setColorFilter(Color.parseColor("#FFE8E8"))
         }
     }
 
@@ -64,7 +63,7 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
         fun setMarket(market: market) {
             binding.rank.text = "${market.rank}"
             binding.item.text = "${market.item}"
-            binding.change.text = "${market.change}"
+            binding.changeText.text = "${market.change}"
         }
     }
 }
