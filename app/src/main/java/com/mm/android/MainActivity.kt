@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        installSplashScreen() // Activiy 확장함수
+        installSplashScreen() // Activity 확장함수
 
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
