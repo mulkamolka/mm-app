@@ -52,10 +52,18 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
             binding.root.setOnClickListener {
                 val intent = Intent(context, ItemDetailActivity::class.java)
 
-                // adapterposition - 리싸이클러뷰에서 제공하는 위치 제공 메소드, https://velog.io/@appletorch/%EB%A6%AC%EC%82%AC%EC%9D%B4%ED%81%B4%EB%9F%AC%EB%B7%B0-%EC%95%84%EC%9D%B4%ED%85%9C-%ED%81%B4%EB%A6%AD-%EC%9D%B4%EB%B2%A4%ED%8A%B8
-                val item = listData.get(adapterPosition)
+//              액티비티로 인텐트 전달, adapterposition - 리싸이클러뷰에서 제공하는 위치 제공 메소드, https://velog.io/@appletorch/%EB%A6%AC%EC%82%AC%EC%9D%B4%ED%81%B4%EB%9F%AC%EB%B7%B0-%EC%95%84%EC%9D%B4%ED%85%9C-%ED%81%B4%EB%A6%AD-%EC%9D%B4%EB%B2%A4%ED%8A%B8
+                val item = listData.get(adapterPosition).item
                 intent.putExtra("test", "${item}")
                 context.startActivity(intent)
+
+                // 프래그먼트로 인텐트 전달
+//                val item = listData.get(adapterPosition)
+//                val detailFragment = ItemDetailTitleFragment()
+//
+//                intent.putExtra("test", "${item}")
+//
+//                context.startActivity(intent)
             }
         }
 
