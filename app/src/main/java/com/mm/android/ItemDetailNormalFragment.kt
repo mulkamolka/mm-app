@@ -22,7 +22,10 @@ class ItemDetailNormalFragment : Fragment() {
         _binding = FragmentItemDetailNormalBinding.inflate(inflater, container, false)
 
         return binding.root
+
+
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
