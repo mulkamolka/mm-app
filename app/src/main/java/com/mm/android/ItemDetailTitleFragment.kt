@@ -34,17 +34,6 @@ class ItemDetailTitleFragment : Fragment() {
 
         binding.itemName.text = arguments?.getString("itemName")
 
-        // 토글 설정 -
-        binding.switchBtn.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                binding.switchOn.setTextColor(Color.WHITE)
-                binding.switchOff.setTextColor(Color.parseColor("#A3D1D8"))
-            } else {
-                binding.switchOff.setTextColor(Color.WHITE)
-                binding.switchOn.setTextColor(Color.parseColor("#A3D1D8"))
-            }
-        }
-
 
         return view
     }

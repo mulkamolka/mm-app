@@ -1,9 +1,9 @@
 package com.mm.android
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import com.mm.android.databinding.ActivityItemDetailBinding
 
 class ItemDetailActivity : AppCompatActivity() {
@@ -25,5 +25,17 @@ class ItemDetailActivity : AppCompatActivity() {
         fragment.arguments = bundle
         transaction.add(R.id.fragmentContainerView11, fragment)
         transaction.commit()
+
+        // 토글 설정
+        binding.switchBtn.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                binding.switchOn.setTextColor(Color.WHITE)
+                binding.switchOff.setTextColor(Color.parseColor("#A3D1D8"))
+            } else {
+                binding.switchOff.setTextColor(Color.WHITE)
+                binding.switchOn.setTextColor(Color.parseColor("#A3D1D8"))
+            }
+        }
+
     }
 }

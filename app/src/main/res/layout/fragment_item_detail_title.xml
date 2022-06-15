@@ -29,49 +29,5 @@
         app:layout_constraintStart_toEndOf="@+id/back_button"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    하단 토글로 설정 -->
-<!--    <FrameLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
-
-<!--        <androidx.appcompat.widget.SwitchCompat-->
-<!--            android:id="@+id/switchBtn"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--            android:thumb="@drawable/switch_thumb"-->
-<!--            android:layout_gravity="center_vertical|center"-->
-<!--            app:switchMinWidth="102dp"-->
-<!--            app:track="@drawable/switch_track_selector" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/switch_off"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_vertical|left"-->
-<!--            android:layout_marginLeft="11dp"-->
-<!--            android:layout_marginBottom="0.5dp"-->
-<!--            android:text="일반"-->
-<!--            android:textStyle="bold"-->
-<!--            android:textColor="#FFFFFF"-->
-<!--            android:textSize="14dp" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/switch_on"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_vertical|right"-->
-<!--            android:layout_marginRight="11dp"-->
-<!--            android:layout_marginBottom="0.5dp"-->
-<!--            android:text="동네"-->
-<!--            android:textStyle="bold"-->
-<!--            android:textColor="#A3D1D8"-->
-<!--            android:textSize="14dp" />-->
-
-<!--    </FrameLayout>-->
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
