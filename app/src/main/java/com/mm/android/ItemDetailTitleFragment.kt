@@ -1,6 +1,7 @@
 package com.mm.android
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -32,6 +33,18 @@ class ItemDetailTitleFragment : Fragment() {
         }
 
         binding.itemName.text = arguments?.getString("itemName")
+
+        // 토글 설정 -
+        binding.switchBtn.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                binding.switchOn.setTextColor(Color.WHITE)
+                binding.switchOff.setTextColor(Color.parseColor("#A3D1D8"))
+            } else {
+                binding.switchOff.setTextColor(Color.WHITE)
+                binding.switchOn.setTextColor(Color.parseColor("#A3D1D8"))
+            }
+        }
+
 
         return view
     }
