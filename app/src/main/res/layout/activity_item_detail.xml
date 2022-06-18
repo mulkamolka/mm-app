@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".ItemDetailActivity">
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/viewPager1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        app:tabIndicator="@drawable/tab_indicator_border_corner_bg"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorColor="#0000"
+        app:tabIndicatorHeight="30dp"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="#08C0D9"
+        app:tabTextColor="@color/black" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
         android:layout_width="0dp"
@@ -30,8 +47,8 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView11"
         android:name="com.mm.android.ItemDetailTitleFragment"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
@@ -45,35 +62,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.95" />
 
-    <FrameLayout
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fragmentContainerView11">
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewPager1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout1"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_gravity="center|bottom"
-            android:layout_marginBottom="40dp"
-            android:background="@color/white"
-            app:tabIndicator="@drawable/tab_indicator_border_corner_bg"
-            app:tabIndicatorAnimationMode="elastic"
-            app:tabIndicatorColor="#0000"
-            app:tabIndicatorHeight="40dp"
-            app:tabMode="fixed"
-            app:tabSelectedTextColor="#08C0D9"
-            app:tabTextColor="@color/black" />
-
-    </FrameLayout>
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

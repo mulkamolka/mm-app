@@ -41,7 +41,7 @@ class ItemDetailActivity : AppCompatActivity() {
 
         // 탭 레이아웃 - 토글
         val fragmentList = listOf(ItemDetailNormalFragment(), ItemDetailTownFragment())
-        val tabTitleList = listOf("     일반     ", "     동네     ")
+        val tabTitleList = listOf("  일반  ", "  동네  ")
         tabLayout1 = binding.tabLayout1
         pager2 = binding.viewPager1
         initView(fragmentList, tabTitleList)
