@@ -1,15 +1,17 @@
 package com.mm.android
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.TableLayout
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.mm.android.databinding.ActivityItemDetailBinding
+import com.mm.android.databinding.FragmentItemDetailNormalBinding
 
 class ItemDetailActivity : AppCompatActivity() {
 
@@ -17,8 +19,8 @@ class ItemDetailActivity : AppCompatActivity() {
     private lateinit var pager2: ViewPager2
     private lateinit var tabLayoutMedicator1: TabLayoutMediator
 
-    val binding by lazy { ActivityItemDetailBinding.inflate(layoutInflater) }
 
+    val binding by lazy { ActivityItemDetailBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +41,7 @@ class ItemDetailActivity : AppCompatActivity() {
 
         // 탭 레이아웃 - 토글
         val fragmentList = listOf(ItemDetailNormalFragment(), ItemDetailTownFragment())
-        val tabTitleList = listOf("일반", "동네")
+        val tabTitleList = listOf("     일반     ", "     동네     ")
         tabLayout1 = binding.tabLayout1
         pager2 = binding.viewPager1
         initView(fragmentList, tabTitleList)
@@ -57,4 +59,7 @@ class ItemDetailActivity : AppCompatActivity() {
 
         tabLayoutMedicator1.attach()
     }
+
+
+
 }

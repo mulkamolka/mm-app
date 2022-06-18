@@ -20,26 +20,54 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView12"
-        android:name="com.mm.android.ItemDetailGraphFragment"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline30"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/fragmentContainerView13"
-        app:layout_constraintEnd_toStartOf="@+id/guideline25"
-        app:layout_constraintStart_toStartOf="@+id/guideline26"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_item_detail_graph" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="10dp" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView13"
-        android:name="com.mm.android.ItemDetailListFragment"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/normalList"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline25"
         app:layout_constraintStart_toStartOf="@+id/guideline26"
-        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView12"
-        tools:layout="@layout/fragment_item_detail_list" />
+        app:layout_constraintTop_toTopOf="@id/guideline30"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    <androidx.core.widget.NestedScrollView-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/guideline25"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/guideline26"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/guideline30">-->
+
+    <!--        <androidx.appcompat.widget.LinearLayoutCompat-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <androidx.fragment.app.FragmentContainerView-->
+    <!--                android:id="@+id/fragmentContainerView12"-->
+    <!--                android:name="com.mm.android.ItemDetailGraphFragment"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                tools:layout="@layout/fragment_item_detail_graph" />-->
+
+    <!--            <androidx.fragment.app.FragmentContainerView-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:id="@+id/fragmentContainerView13"-->
+    <!--                android:name="com.mm.android.ItemDetailListFragment"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                tools:layout="@layout/fragment_item_detail_list" />-->
+
+    <!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+
+<!--</androidx.core.widget.NestedScrollView>-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
