@@ -101,8 +101,9 @@ class ItemDetailNormalFragment : Fragment() {
             val title = "${i}번째 바나나"
             val content = "바나나는 다이어트에 좋은 식품이다. 중간 크기의 바나나 한 개의 열량은 110칼로리인데 이를 통해 건강에 좋은..."
             val newsPaper = "00일보"
+            val url = "https://kormedi.com/1403385/%EF%BB%BF%EB%B0%94%EB%82%98%EB%82%98-%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8%EC%99%80-%EA%B1%B4%EA%B0%95%EC%97%90-%EC%A2%8B%EC%9D%80-%EC%9D%B4%EC%9C%A0-7/"
             val time = System.currentTimeMillis()
-            data.add(News(image, title, content, newsPaper, time))
+            data.add(News(image, title, content, newsPaper, time, url))
         }
         return data
     }
