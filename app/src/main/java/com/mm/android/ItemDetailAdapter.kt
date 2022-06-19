@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.mm.android.databinding.DetailGraphItemRecyclerBinding
 import com.mm.android.databinding.DetailNewsItemRecyclerBinding
+import com.mm.android.databinding.FragmentItemDetailGraphBinding
 
 class ItemDetailAdapter: RecyclerView.Adapter<Holder>() {
     var detail = ArrayList<Detail>()
@@ -17,7 +17,7 @@ class ItemDetailAdapter: RecyclerView.Adapter<Holder>() {
         when (viewType) {
             Detail.TYPE_A -> {
                 Log.d("test onBindViewHolder", "TYPE_ A ok")
-                val binding = DetailGraphItemRecyclerBinding.inflate(
+                val binding = FragmentItemDetailGraphBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false
@@ -75,10 +75,10 @@ class ItemDetailAdapter: RecyclerView.Adapter<Holder>() {
 }
 
 class Holder : RecyclerView.ViewHolder {
-    lateinit var bindingA: DetailGraphItemRecyclerBinding
+    lateinit var bindingA: FragmentItemDetailGraphBinding
     lateinit var bindingB: DetailNewsItemRecyclerBinding
 
-    constructor(bindingA: DetailGraphItemRecyclerBinding) : super(bindingA.root) {
+    constructor(bindingA: FragmentItemDetailGraphBinding) : super(bindingA.root) {
         this.bindingA = bindingA
     }
 
