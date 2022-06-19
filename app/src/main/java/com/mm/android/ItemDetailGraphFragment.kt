@@ -16,9 +16,10 @@ class ItemDetailGraphFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentItemDetailGraphBinding.inflate(inflater, container, false)
+
 
         return binding.root
     }
@@ -27,4 +28,5 @@ class ItemDetailGraphFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }
