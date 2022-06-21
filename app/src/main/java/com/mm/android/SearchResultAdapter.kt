@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mm.android.databinding.ItemRecyclerBinding
 
 class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
-    var listData = mutableListOf<market>()
+    var listData = mutableListOf<Market>()
     var bundle = Bundle()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -68,7 +68,7 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
         }
 
         // 데이터 입력
-        fun setMarket(market: market) {
+        fun setMarket(market: Market) {
             binding.rank.text = "${market.rank}"
             binding.item.text = "${market.item}"
             binding.changeText.text = "${market.change}"

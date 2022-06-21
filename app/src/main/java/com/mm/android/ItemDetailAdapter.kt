@@ -17,7 +17,7 @@ import com.mm.android.databinding.DetailNewsItemRecyclerBinding
 import com.mm.android.databinding.FragmentItemDetailGraphBinding
 
 class ItemDetailAdapter : RecyclerView.Adapter<ItemDetailAdapter.Holder>() {
-    var detail = ArrayList<Detail>()
+    var multiListType = ArrayList<MultiListType>()
     lateinit var context: Context
     lateinit var newsList: MutableList<News>
 
@@ -26,7 +26,7 @@ class ItemDetailAdapter : RecyclerView.Adapter<ItemDetailAdapter.Holder>() {
 
         Log.d("test onCreateViewHolder", "Let's onCreateViewHolder")
         when (viewType) {
-            Detail.TYPE_A -> {
+            MultiListType.TYPE_A -> {
                 Log.d("test onBindViewHolder", "TYPE_ A ok")
                 val binding = FragmentItemDetailGraphBinding.inflate(
                     LayoutInflater.from(parent.context),
@@ -36,7 +36,7 @@ class ItemDetailAdapter : RecyclerView.Adapter<ItemDetailAdapter.Holder>() {
 
                 return Holder(binding)
             }
-            Detail.TYPE_B -> {
+            MultiListType.TYPE_B -> {
                 Log.d("test onBindViewHolder", "TYPE_ B ok")
                 val binding = DetailNewsItemRecyclerBinding.inflate(
                     LayoutInflater.from(parent.context),
@@ -62,11 +62,11 @@ class ItemDetailAdapter : RecyclerView.Adapter<ItemDetailAdapter.Holder>() {
     override fun onBindViewHolder(holder: Holder, position: Int) {
         Log.d("test onBindViewHolder", "Let's onBindViewHolder")
         when (holder.itemViewType) {
-            Detail.TYPE_A -> {
+            MultiListType.TYPE_A -> {
                 Log.d("test onBindViewHolder", "TYPE_A ${position}")
                 holder.setGraph(context)
             }
-            Detail.TYPE_B -> {
+            MultiListType.TYPE_B -> {
                 Log.d("test onBindViewHolder", "TYPE_ B${position}")
                 val newsData = newsList.get(position)
                 holder.setNews(newsData)
@@ -75,13 +75,13 @@ class ItemDetailAdapter : RecyclerView.Adapter<ItemDetailAdapter.Holder>() {
     }
 
     override fun getItemCount(): Int {
-        Log.d("test getItemCount", "Let's getItemCount ${detail.size}")
-        return detail.size
+        Log.d("test getItemCount", "Let's getItemCount ${multiListType.size}")
+        return multiListType.size
     }
 
     override fun getItemViewType(position: Int): Int {
-        Log.d("test getItemViewType", "Let's getItemViewType ${detail[position].type}")
-        return detail[position].type
+        Log.d("test getItemViewType", "Let's getItemViewType ${multiListType[position].type}")
+        return multiListType[position].type
     }
 
 
