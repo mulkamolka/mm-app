@@ -1,17 +1,18 @@
-package com.mm.android
+package com.mm.android.itemdetail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
-import com.bumptech.glide.Glide
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.mm.android.R
 import com.mm.android.databinding.ActivityItemDetailBinding
-import com.mm.android.databinding.FragmentItemDetailNormalBinding
+import com.mm.android.itemdetail.adapter.TabLayoutAdapter
+import com.mm.android.itemdetail.fragment.ItemDetailTitleFragment
+import com.mm.android.itemdetail.normal.fragment.ItemDetailNormalFragment
+import com.mm.android.itemdetail.town.fragment.ItemDetailTownFragment
 
 class ItemDetailActivity : AppCompatActivity() {
 
@@ -36,7 +37,7 @@ class ItemDetailActivity : AppCompatActivity() {
 
         bundle.putString("itemName", itemName)
         fragment.arguments = bundle
-        transaction.add(R.id.fragmentContainerView11, fragment)
+        transaction.replace(R.id.fragmentContainerView11, fragment)
         transaction.commit()
 
         // 탭 레이아웃 - 토글
