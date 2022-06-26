@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ItemDetailActivity">
+    tools:context=".itemdetail.ItemDetailActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout1"
@@ -46,7 +46,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView11"
-        android:name="com.mm.android.ItemDetailTitleFragment"
+        android:name="com.mm.android.itemdetail.fragment.ItemDetailTitleFragment"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"

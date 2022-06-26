@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".home.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/optionFragment"
-        android:name="com.mm.android.HomeOptionFragment"
+        android:name="com.mm.android.home.fragment.HomeOptionFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/searchFragment"
@@ -20,7 +20,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/searchFragment"
-        android:name="com.mm.android.HomeSearchFragment"
+        android:name="com.mm.android.home.fragment.HomeSearchFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
@@ -31,7 +31,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/categoryFragment"
-        android:name="com.mm.android.HomeCategoryFragment"
+        android:name="com.mm.android.home.fragment.HomeCategoryFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"

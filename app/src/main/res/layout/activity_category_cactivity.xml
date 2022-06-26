@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CategoryCActivity">
+    tools:context=".category.CategoryCActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView7"
-        android:name="com.mm.android.SearchResultFragment"
+        android:name="com.mm.android.category.fragment.SearchResultFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
@@ -41,7 +41,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView8"
-        android:name="com.mm.android.SearchFragment"
+        android:name="com.mm.android.category.fragment.SearchFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/fragmentContainerView7"

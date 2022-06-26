@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ItemDetailNormalFragment">
+    tools:context=".itemdetail.normal.fragment.ItemDetailNormalFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline25"
@@ -51,7 +51,7 @@
 
     <!--            <androidx.fragment.app.FragmentContainerView-->
     <!--                android:id="@+id/fragmentContainerView12"-->
-    <!--                android:name="com.mm.android.ItemDetailGraphFragment"-->
+    <!--                android:name="com.mm.android.itemdetail.normal.fragment.ItemDetailGraphFragment"-->
     <!--                android:layout_width="match_parent"-->
     <!--                android:layout_height="wrap_content"-->
     <!--                tools:layout="@layout/fragment_item_detail_graph" />-->
@@ -59,7 +59,7 @@
     <!--            <androidx.fragment.app.FragmentContainerView-->
     <!--                android:layout_marginTop="10dp"-->
     <!--                android:id="@+id/fragmentContainerView13"-->
-    <!--                android:name="com.mm.android.ItemDetailListFragment"-->
+    <!--                android:name="com.mm.android.itemdetail.normal.fragment.ItemDetailListFragment"-->
     <!--                android:layout_width="match_parent"-->
     <!--                android:layout_height="wrap_content"-->
     <!--                tools:layout="@layout/fragment_item_detail_list" />-->

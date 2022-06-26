@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_constraintHorizontal_chainStyle="spread_inside"
-    tools:context=".SearchFragment">
+    tools:context=".category.fragment.SearchFragment">
 
     <ImageView
         android:id="@+id/back_button"
