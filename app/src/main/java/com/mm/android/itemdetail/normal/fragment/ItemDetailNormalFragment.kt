@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mm.android.databinding.FragmentItemDetailNormalBinding
-import com.mm.android.itemdetail.adapter.ItemDetailAdapter
+import com.mm.android.itemdetail.adapter.ItemDetailNormalAdapter
 import com.mm.android.itemdetail.data.MultiListType
 import com.mm.android.itemdetail.data.News
 
@@ -29,7 +29,7 @@ class ItemDetailNormalFragment : Fragment() {
 
         // 그래프와 뉴스 리스트 생성
         val newsData:MutableList<News> = newsLoad()
-        var adapter = ItemDetailAdapter()
+        var adapter = ItemDetailNormalAdapter()
         multiListType.add(MultiListType(MultiListType.TYPE_A))
         multiListType.add(MultiListType(MultiListType.TYPE_B))
         multiListType.add(MultiListType(MultiListType.TYPE_B))

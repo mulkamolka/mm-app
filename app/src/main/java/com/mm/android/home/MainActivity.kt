@@ -5,6 +5,7 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.location.*
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
+import com.kakao.util.maps.helper.Utility
 import com.mm.android.R
 import com.mm.android.address.LocationProvider
 import com.mm.android.databinding.ActivityMainBinding
@@ -25,6 +27,8 @@ import com.mm.android.databinding.FragmentHomeOptionBinding
 import com.mm.android.home.fragment.HomeOptionFragment
 import com.mm.android.itemdetail.fragment.ItemDetailTitleFragment
 import java.io.IOException
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 import java.util.*
 
 class MainActivity : AppCompatActivity() {

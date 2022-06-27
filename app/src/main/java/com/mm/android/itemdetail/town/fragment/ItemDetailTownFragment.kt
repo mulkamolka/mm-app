@@ -1,5 +1,6 @@
 package com.mm.android.itemdetail.town.fragment
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mm.android.databinding.FragmentItemDetailTownBinding
-import com.mm.android.itemdetail.normal.fragment.ItemDetailNormalAdapter
+import com.mm.android.itemdetail.adapter.ItemDetailTownAdapter
 import com.mm.android.itemdetail.data.Markets
 import com.mm.android.itemdetail.data.MultiListType
 import java.time.LocalDate
@@ -28,7 +29,7 @@ class ItemDetailTownFragment : Fragment() {
 
         // 지도와 마켓 리스트 생성
         val marketsData: MutableList<Markets> = marketsLoad()
-        var adapter = ItemDetailNormalAdapter()
+        var adapter = ItemDetailTownAdapter(activity)
         multiListType.add(MultiListType(MultiListType.TYPE_A))
         multiListType.add(MultiListType(MultiListType.TYPE_B))
         multiListType.add(MultiListType(MultiListType.TYPE_B))

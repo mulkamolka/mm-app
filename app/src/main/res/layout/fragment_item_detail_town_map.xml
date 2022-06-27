@@ -11,21 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:text="근처에서 제일 가까워요!"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintBottom_toTopOf="@+id/map_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:text="map"
-        android:gravity="center"
+    <RelativeLayout
+        android:id="@+id/map_view"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
-        android:background="@color/purple_200"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView4" />
-
+        app:layout_constraintTop_toBottomOf="@id/textView4"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,16 +1,22 @@
-package com.mm.android.itemdetail.normal.fragment
+package com.mm.android.itemdetail.adapter
 
+import android.app.Activity
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.mm.android.databinding.DetailMarketsItemRecyclerBinding
 import com.mm.android.databinding.FragmentItemDetailTownMapBinding
 import com.mm.android.itemdetail.data.Markets
 import com.mm.android.itemdetail.data.MultiListType
+import net.daum.mf.map.api.MapPOIItem
+import net.daum.mf.map.api.MapPoint
+import net.daum.mf.map.api.MapView
 
-class ItemDetailNormalAdapter : RecyclerView.Adapter<ItemDetailNormalAdapter.Holder>() {
+class ItemDetailTownAdapter(activity: FragmentActivity?) : RecyclerView.Adapter<ItemDetailTownAdapter.Holder>() {
+    var activity = activity
     var multiListType = ArrayList<MultiListType>()
     lateinit var context: Context
     lateinit var marketslist: MutableList<Markets>
@@ -57,7 +63,7 @@ class ItemDetailNormalAdapter : RecyclerView.Adapter<ItemDetailNormalAdapter.Hol
         when (holder.itemViewType) {
             MultiListType.TYPE_A -> {
                 Log.d("test onBindViewHolder", "TYPE_A ${position}")
-                holder.setMap()
+                holder.setMap(activity!!)
             }
             MultiListType.TYPE_B -> {
                 Log.d("test onBindViewHolder", "TYPE_ B${position}")
@@ -95,8 +101,24 @@ class ItemDetailNormalAdapter : RecyclerView.Adapter<ItemDetailNormalAdapter.Hol
             this.bindingB = bindingB
         }
 
-        fun setMap() {
+        fun setMap(activity: FragmentActivity) {
+            var mapView = MapView(activity)
+            bindingA.mapView.addView(mapView)
+            mapView.setMapCenterPoint(
+                MapPoint.mapPointWithGeoCoord(
+                    37.54892296550104,
+                    126.99089033876304
+                ), true
+            );
 
+            val MARKER_POINT = MapPoint.mapPointWithGeoCoord(37.54892296550104, 126.99089033876304)
+            val marker = MapPOIItem()
+            marker.itemName = "Default Marker"
+            marker.tag = 0
+            marker.mapPoint = MARKER_POINT
+            marker.markerType = MapPOIItem.MarkerType.BluePin
+            marker.selectedMarkerType = MapPOIItem.MarkerType.RedPin
+            mapView.addPOIItem(marker)
         }
 
         fun setMarkets(markets: Markets) {

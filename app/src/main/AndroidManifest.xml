@@ -3,8 +3,8 @@
     package="com.mm.android">
     <!-- Glide 이미지 로딩 관련 인터넷 권한 설정 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,12 +12,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.Mm.Splash">
+        android:theme="@style/Theme.Mm.Splash"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".itemdetail.town.fragment.news.NewsDetailActivity"
             android:exported="false"
-            android:theme="@style/Theme.Mm.NoActionbar"/>
+            android:theme="@style/Theme.Mm.NoActionbar" />
         <activity
             android:name=".itemdetail.ItemDetailActivity"
             android:exported="false"
@@ -56,6 +56,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="64a0a43bf88c92949776f991f2ef25d6" />
     </application>
 
 </manifest>

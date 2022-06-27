@@ -18,7 +18,7 @@ import com.mm.android.itemdetail.data.MultiListType
 import com.mm.android.itemdetail.data.News
 import com.mm.android.itemdetail.town.fragment.news.NewsDetailActivity
 
-class ItemDetailAdapter : RecyclerView.Adapter<ItemDetailAdapter.Holder>() {
+class ItemDetailNormalAdapter : RecyclerView.Adapter<ItemDetailNormalAdapter.Holder>() {
     var multiListType = ArrayList<MultiListType>()
     lateinit var context: Context
     lateinit var newsList: MutableList<News>
