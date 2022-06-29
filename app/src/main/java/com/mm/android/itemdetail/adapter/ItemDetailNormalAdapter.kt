@@ -119,7 +119,6 @@ class ItemDetailNormalAdapter : RecyclerView.Adapter<ItemDetailNormalAdapter.Hol
 
         fun setGraph(context: Context) {
             Log.d("test setGraph", "setGraph ok")
-            bindingA.text3.text = "This is graph"
 
             // 차트 지정
             var lineChart = bindingA.chart
