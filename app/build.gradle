@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt' // Retrofit
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -9,6 +10,10 @@ android {
 
     buildFeatures {
         viewBinding true
+    }
+
+    androidExtensions {
+        experimental = true // 객체 intent 직렬화
     }
 
     defaultConfig {
