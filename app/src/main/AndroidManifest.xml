@@ -23,23 +23,23 @@
             android:exported="false"
             android:theme="@style/Theme.Mm.NoActionbar" />
         <activity
-            android:name=".category.CategoryDActivity"
+            android:name=".searchResult.CategoryDActivity"
             android:exported="false"
             android:theme="@style/Theme.Mm.NoActionbar" />
         <activity
-            android:name=".category.CategoryCActivity"
+            android:name=".searchResult.CategoryCActivity"
             android:exported="false"
             android:theme="@style/Theme.Mm.NoActionbar" />
         <activity
-            android:name=".category.CategoryBActivity"
+            android:name=".searchResult.CategoryBActivity"
             android:exported="false"
             android:theme="@style/Theme.Mm.NoActionbar" />
         <activity
-            android:name=".category.CategoryAActivity"
+            android:name=".searchResult.CategoryAActivity"
             android:exported="false"
             android:theme="@style/Theme.Mm.NoActionbar" />
         <activity
-            android:name=".category.SearchActivity"
+            android:name=".searchResult.SearchActivity"
             android:exported="false"
             android:theme="@style/Theme.Mm.NoActionbar" />
         <activity
