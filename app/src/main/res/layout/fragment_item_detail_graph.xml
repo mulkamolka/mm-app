@@ -48,5 +48,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/graph_content" />
 
+    <TextView
+        android:id="@+id/news_serviece"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="소식"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chart" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
