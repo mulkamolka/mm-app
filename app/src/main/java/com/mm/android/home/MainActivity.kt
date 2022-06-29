@@ -1,11 +1,9 @@
 package com.mm.android.home
 
 import android.Manifest
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
-import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.location.*
 import androidx.appcompat.app.AppCompatActivity
@@ -19,16 +17,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
-import com.kakao.util.maps.helper.Utility
 import com.mm.android.R
 import com.mm.android.address.LocationProvider
 import com.mm.android.databinding.ActivityMainBinding
-import com.mm.android.databinding.FragmentHomeOptionBinding
 import com.mm.android.home.fragment.HomeOptionFragment
-import com.mm.android.itemdetail.fragment.ItemDetailTitleFragment
 import java.io.IOException
-import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -60,8 +53,6 @@ class MainActivity : AppCompatActivity() {
 
         checkAllPermissions()
         updateUI()
-//        setRefreshButton()
-
     }
 
     // 런타임에서 권한과 위치 서비스 확인
@@ -225,19 +216,22 @@ class MainActivity : AppCompatActivity() {
         } catch (ioExecption: IOException) {
             Toast.makeText(
                 this, "지오코더 서비스 사용불가 합니다.",
-                Toast.LENGTH_LONG).show()
+                Toast.LENGTH_LONG
+            ).show()
             return null
         } catch (illegalArgumentException: IllegalArgumentException) {
             Toast.makeText(
                 this, "잘못된 위도, 경도입니다.",
-                Toast.LENGTH_LONG).show()
+                Toast.LENGTH_LONG
+            ).show()
             return null
         }
 
         if (addresses == null || addresses.size == 0) {
             Toast.makeText(
                 this, "주소가 발견되지 않았습니다.",
-                Toast.LENGTH_LONG).show()
+                Toast.LENGTH_LONG
+            ).show()
             return null
         }
 
@@ -261,7 +255,8 @@ class MainActivity : AppCompatActivity() {
             address?.let {
                 Log.d("test thoroughfare", "${it.thoroughfare}")
                 val data = it.thoroughfare
-                setDataAtFragment(HomeOptionFragment(), data) }
+                setDataAtFragment(R.id.optionFragment, HomeOptionFragment(), data)
+            }
         } else {
             Log.d("test bad lat, lon", "$latitude, $longitude")
 
@@ -272,9 +267,8 @@ class MainActivity : AppCompatActivity() {
             ).show()
         }
 
-
-
-        // 위치 정보 제공자 획득 - 조건 명시법 적용
+//        나중에 확인
+//        위치 정보 제공자 획득 - 조건 명시법 적용
 //        val criteria = Criteria()
 //        criteria.accuracy = Criteria.ACCURACY_FINE
 //        criteria.isAltitudeRequired = false// 고도 제공
@@ -324,7 +318,7 @@ class MainActivity : AppCompatActivity() {
 //                // provider가 사용 불가능 상황이 되는 순간 호출
 //            }
 //        }
-//
+
 //        // 현재 위치를 기반으
 //        Log.d("test lat, lon", "${location1}")
 //        Log.d("test lat, lon", "${location2}")
@@ -354,24 +348,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     // reverse geocoder - 위도, 경도 -> 주소
-    private fun getFromLocationName(lat: Double, lon: Double, maxResult: Int = 10) {
-        Log.d("test getFromLocationName()", "ok")
-        val cityList = Geocoder(this.baseContext).getFromLocation(lat, lon, maxResult)
-        if (cityList != null) {
-            if (cityList.size == 0) {
-                Log.d("test cityList", "no")
-                Toast.makeText(
-                    this@MainActivity,
-                    "해당 도시가 없습니다.",
-                    Toast.LENGTH_LONG
-                ).show()
-            } else {
-                for (i in 0..cityList.size - 1) {
-                    Log.d("test cityList", "${cityList.get(i)}")
-                }
-            }
-        }
-    }
+//    private fun getFromLocationName(lat: Double, lon: Double, maxResult: Int = 10) {
+//        Log.d("test getFromLocationName()", "ok")
+//        val cityList = Geocoder(this.baseContext).getFromLocation(lat, lon, maxResult)
+//        if (cityList != null) {
+//            if (cityList.size == 0) {
+//                Log.d("test cityList", "no")
+//                Toast.makeText(
+//                    this@MainActivity,
+//                    "해당 도시가 없습니다.",
+//                    Toast.LENGTH_LONG
+//                ).show()
+//            } else {
+//                for (i in 0..cityList.size - 1) {
+//                    Log.d("test cityList", "${cityList.get(i)}")
+//                }
+//            }
+//        }
+//    }
 
     // GPS, 네트워크 작동상태 확인
     fun isLocationServicesAvailable(): Boolean {
@@ -384,18 +378,15 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    fun setDataAtFragment(fragment:Fragment, data:String) {
+    fun setDataAtFragment(id: Int, fragment: Fragment, data: String) {
         // 검색 리스트에서 선택된 아이템 프래그먼트 전달
         val bundle = Bundle()
         val transaction = supportFragmentManager.beginTransaction()
-        Log.d("test bundle", "start")
 
         bundle.putString("data", data)
         fragment.arguments = bundle
-        transaction.replace(R.id.optionFragment, fragment)
-        transaction.commit()
-        Log.d("test bundle", "end")
-
+        transaction.add(id, fragment)
+            .commit()
     }
 
     override fun onStart() {

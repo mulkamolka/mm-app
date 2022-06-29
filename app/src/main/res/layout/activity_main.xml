@@ -9,14 +9,12 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/optionFragment"
-        android:name="com.mm.android.home.fragment.HomeOptionFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/searchFragment"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@id/guideline3"
-        tools:layout="@layout/fragment_home_option" />
+        app:layout_constraintTop_toTopOf="@id/guideline3"/>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/searchFragment"
