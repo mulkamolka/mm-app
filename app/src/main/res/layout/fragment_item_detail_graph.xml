@@ -22,8 +22,7 @@
         <TextView
             android:id="@+id/text3"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:text="데이터 시각화 화면" />
+            android:layout_height="200dp"/>
     </FrameLayout>
 
 

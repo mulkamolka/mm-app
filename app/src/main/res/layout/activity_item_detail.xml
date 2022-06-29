@@ -46,14 +46,12 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView11"
-        android:name="com.mm.android.itemdetail.fragment.ItemDetailTitleFragment"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
-        tools:layout="@layout/fragment_item_detail_title" />
+        app:layout_constraintTop_toTopOf="@+id/guideline9"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline27"

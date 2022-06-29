@@ -59,6 +59,7 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
 
                 // retrofit 통신 보내기
                 intent.putExtra("test", "${item}")
+                context.startActivity(intent)
 
             }
         }
