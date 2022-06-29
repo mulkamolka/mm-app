@@ -253,8 +253,10 @@ class MainActivity : AppCompatActivity() {
             // 현재 위치 가져오고 UI 업데이트
             val address = getCurrentAddress(latitude, longitude)
             address?.let {
+                Log.d("test address", "${it.getAddressLine(0)}")
+                Log.d("test address", "${it.getAddressLine(0).split(" ")[3]}")
                 Log.d("test thoroughfare", "${it.thoroughfare}")
-                val data = it.thoroughfare
+                val data = it.thoroughfare ?: it.getAddressLine(0).split(" ")[3]
                 setDataAtFragment(R.id.optionFragment, HomeOptionFragment(), data)
             }
         } else {
