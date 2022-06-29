@@ -1,4 +1,4 @@
-package com.mm.android.category.fragment
+package com.mm.android.searchResult.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.setFragmentResultListener
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.mm.android.category.adapcter.SearchResultAdapter
+import com.mm.android.searchResult.adapcter.SearchResultAdapter
 import com.mm.android.databinding.FragmentSearchResultBinding
-import com.mm.android.category.data.Market
+import com.mm.android.searchResult.data.ItemRank
 
 class SearchResultFragment : Fragment() {
     private var _binding: FragmentSearchResultBinding? = null
@@ -25,9 +25,10 @@ class SearchResultFragment : Fragment() {
         _binding = FragmentSearchResultBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        // 데이터를 불러온다
-        val data: MutableList<Market> = loadData()
-        adapter.listData = data
+        Log.d("test itemRankListData", "ok")
+        val Data = loadData()
+
+        adapter.listData = Data
 
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
@@ -50,37 +51,38 @@ class SearchResultFragment : Fragment() {
         _binding = null
     }
 
-    // 데이터를 불러오는 함수
-    fun loadData(): MutableList<Market> {
-        val data: MutableList<Market> = mutableListOf()
+    // 데이터를 불러온다
+    private fun loadData(): ArrayList<ItemRank> {
+        val tempData = ArrayList<ItemRank>()
+        Log.d("test loadData()", "ok")
+        val data = arguments?.getSerializable("itemRankListData") as ArrayList<ItemRank>
+        tempData.addAll(data)
+        Log.d("test itemRankListData", "${data}")
 
-        for (rank in 1..100) {
-            val item = "바나나"
-            var change = rank - 50.5
-            var market = Market(rank, item, change)
-            data.add(market)
-        }
-
-        return data
+        return tempData
     }
 
     // 검색 함수 구현
-    fun search(string: String) {
+    private fun search(string: String) {
+
         adapter.listData.clear()
 
-        var data = loadData()
+        val searchResultData = loadData()
+        Log.d("test search", "${searchResultData}")
+
 
         if (string?.length == 0) {
-            adapter.listData.addAll(data)
-
-        } else {
-            for (i in 0..data.size-1) {
-                if (data.get(i).item.contains(string)) {
-                    adapter.listData.add(data.get(i))
+            adapter.listData.addAll(searchResultData)
+            Log.d("test search", "ok")
+        }
+        else {
+            for (i in 0..searchResultData.size - 1) {
+                if (searchResultData.get(i).pgroupName!!.contains(string)) {
+                    adapter.listData.add(searchResultData.get(i))
                 }
             }
-        }
 
+        }
         // 어댑터 데이터 갱신
         adapter.notifyDataSetChanged()
     }

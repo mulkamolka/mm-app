@@ -1,4 +1,4 @@
-package com.mm.android.category.fragment
+package com.mm.android.searchResult.fragment
 
 import android.content.Intent
 import android.os.Bundle
