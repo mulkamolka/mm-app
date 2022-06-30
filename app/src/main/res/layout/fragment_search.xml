@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     app:layout_constraintHorizontal_chainStyle="spread_inside"
     tools:context=".searchResult.fragment.SearchFragment">
 
     <ImageView
         android:id="@+id/back_button"
         android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_height="40dp"
         android:layout_marginStart="5dp"
         android:src="@drawable/back_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/item_rank"
         app:layout_constraintEnd_toStartOf="@+id/search_input"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,9 +23,9 @@
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_input"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         app:iconifiedByDefault="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/item_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@id/back_button"
@@ -33,5 +33,72 @@
         app:queryBackground="@drawable/search_bar_background"
         app:queryHint="검색어를 입력해주세요"
         app:searchIcon="@drawable/search_icon" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.63" />
+
+    <TextView
+        android:id="@+id/item_rank"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="순위"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline35"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_button" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="8"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:text="품목"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline37"
+        app:layout_constraintStart_toStartOf="@+id/guideline35"
+        app:layout_constraintTop_toBottomOf="@+id/search_input" />
+
+    <TextView
+        android:id="@+id/percent"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="전일 대비 등락률"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline37"
+        app:layout_constraintTop_toBottomOf="@+id/search_input" />
+
+    <View
+        android:id="@+id/devided_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#606060"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
