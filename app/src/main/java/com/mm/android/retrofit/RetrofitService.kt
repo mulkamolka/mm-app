@@ -15,12 +15,12 @@ interface RetrofitService {
     fun getAllItemRankData() : Call<AllItemRankListResponse>
 
     // item rank - category
-    @POST("list/2/{category}") // URI 주소 입력 필요
+    @GET("list/2/{category}") // URI 주소 입력 필요
     fun getCategoryItemRankData(@Path("category") category:String) : Call<CategoryItemRankListResponse>
 
-//    // Detail Item
-//    @POST("list/3/{pGroup}") // URI 주소 입력 필요
-//    fun getDetailItemList(@Path("pGroup") pGroup:String) : Call<DetailItemListResponse>
+    // Detail Item
+    @GET("list/3/{pGroup}") // URI 주소 입력 필요
+    fun getDetailItemList(@Path("pGroup") pGroup:String) : Call<DetailItemListResponse>
 
 //    // Detail Item Price
 //    @POST("/list/4/{cCode}") // URI 주소 입력 필요

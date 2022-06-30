@@ -21,14 +21,12 @@ class SearchResultFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentSearchResultBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        Log.d("test itemRankListData", "ok")
-        val Data = loadData()
-
-        adapter.listData = Data
+        val data = loadData()
+        adapter.listData = data
 
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
