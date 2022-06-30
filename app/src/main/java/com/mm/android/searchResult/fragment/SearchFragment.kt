@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
-import com.mm.android.home.MainActivity
 import com.mm.android.databinding.FragmentSearchBinding
 
 class SearchFragment : Fragment() {
@@ -28,16 +27,10 @@ class SearchFragment : Fragment() {
         val searchInput = binding.searchInput
         val backButton = binding.backButton
 
-        // 인텐트
-
 
         // 뒤로가기 버튼
         backButton.setOnClickListener {
-            val intent = Intent(activity, MainActivity::class.java)
-
-            // 스택 정리
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
+            activity?.finish()
         }
 
         // 키보드 포커스를 요청

@@ -40,22 +40,8 @@ class ItemDetailTitleFragment : Fragment() {
 
         // 뒤로가기 버튼
         backButton.setOnClickListener {
-            val intent = Intent(activity, MainActivity::class.java)
-
-            // 스택 정리
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
-
-            // finish()
+            activity?.finish()
         }
-
-//        Log.d("test Item Detail", "ok")
-//        val data = arguments?.getString("itemName")
-//        binding.itemName.text = data
-//        Log.d("test itemName", "${data}")
-
-
-
 
         return view
     }
