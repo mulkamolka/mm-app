@@ -36,29 +36,29 @@ class HomeCategoryFragment : Fragment() {
         // 로딩화면 생성
         dialog = DialogActivity(container!!.context)
 
-        binding.categoryA.setOnClickListener {
+        binding.agricCategory.setOnClickListener {
             dialog.show()
             val intent = Intent(activity, CategoryAActivity::class.java)
             getCategoryItemRank(intent, "agric")
         }
 
 
-        binding.categoryB.setOnClickListener {
+        binding.seaCategory.setOnClickListener {
             val intent = Intent(activity, CategoryBActivity::class.java)
-            getCategoryItemRank(intent, binding.categoryB.text.toString())
-            startActivity(intent)
+//            getCategoryItemRank(intent, binding.categoryB.text.toString())
+//            startActivity(intent)
         }
 
-        binding.categoryC.setOnClickListener {
+        binding.livestockCategory.setOnClickListener {
             val intent = Intent(activity, CategoryCActivity::class.java)
-            getCategoryItemRank(intent, binding.categoryC.text.toString())
-            startActivity(intent)
+//            getCategoryItemRank(intent, binding.categoryC.text.toString())
+//            startActivity(intent)
         }
 
-        binding.categoryD.setOnClickListener {
+        binding.emptyCategory.setOnClickListener {
             val intent = Intent(activity, CategoryDActivity::class.java)
-            getCategoryItemRank(intent, binding.categoryD.text.toString())
-            startActivity(intent)
+//            getCategoryItemRank(intent, binding.categoryD.text.toString())
+//            startActivity(intent)
         }
 
         return view
