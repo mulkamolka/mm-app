@@ -1,11 +1,11 @@
-package com.mm.android.itemdetail.town.fragment.news
+package com.mm.android.detailItem.town.fragment.news
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.mm.android.R
 import com.mm.android.databinding.ActivityNewsDetailBinding
-import com.mm.android.itemdetail.normal.fragment.WebviewFragment
-import com.mm.android.itemdetail.normal.fragment.WebviewOptionFragment
+import com.mm.android.detailItem.normal.fragment.WebviewFragment
+import com.mm.android.detailItem.normal.fragment.WebviewOptionFragment
 
 class NewsDetailActivity : AppCompatActivity() {
 

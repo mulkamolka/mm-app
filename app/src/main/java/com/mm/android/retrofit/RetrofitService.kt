@@ -2,11 +2,10 @@ package com.mm.android.retrofit
 
 import com.mm.android.searchResult.data.AllItemRankListResponse
 import com.mm.android.searchResult.data.CategoryItemRankListResponse
-import com.mm.android.itemdetail.data.DetailItemListResponse
-import com.mm.android.itemdetail.data.ItemNewsResponse
+import com.mm.android.detailItem.data.DetailItemListResponse
+import com.mm.android.detailItem.data.ItemNewsResponse
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface RetrofitService {

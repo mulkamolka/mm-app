@@ -1,4 +1,4 @@
-package com.mm.android.itemdetail.data
+package com.mm.android.detailItem.data
 
 data class News(
     var image: String, var title: String, var content: String,

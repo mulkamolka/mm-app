@@ -1,4 +1,4 @@
-package com.mm.android.itemdetail.data
+package com.mm.android.detailItem.data
 
 import java.time.LocalDate
 

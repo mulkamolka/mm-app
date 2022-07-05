@@ -1,4 +1,4 @@
-package com.mm.android.itemdetail.data
+package com.mm.android.detailItem.data
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

@@ -1,4 +1,4 @@
-package com.mm.android.itemdetail.data
+package com.mm.android.detailItem.data
 
 class ItemNewsResponse : ArrayList<ItemNews>()
 

@@ -1,4 +1,4 @@
-package com.mm.android.itemdetail.normal.fragment
+package com.mm.android.detailItem.normal.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.mm.android.databinding.FragmentWebviewOptionBinding
-import com.mm.android.itemdetail.ItemDetailActivity
+import com.mm.android.detailItem.ItemDetailActivity
 
 class WebviewOptionFragment : Fragment() {
     private var _binding: FragmentWebviewOptionBinding? = null

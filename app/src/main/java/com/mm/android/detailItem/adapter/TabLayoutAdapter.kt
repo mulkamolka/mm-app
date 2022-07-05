@@ -1,4 +1,4 @@
-package com.mm.android.itemdetail.adapter
+package com.mm.android.detailItem.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

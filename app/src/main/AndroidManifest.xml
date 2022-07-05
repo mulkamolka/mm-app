@@ -15,11 +15,11 @@
         android:theme="@style/Theme.Mm.Splash"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".itemdetail.town.fragment.news.NewsDetailActivity"
+            android:name=".detailItem.town.fragment.news.NewsDetailActivity"
             android:exported="false"
             android:theme="@style/Theme.Mm.NoActionbar" />
         <activity
-            android:name=".itemdetail.ItemDetailActivity"
+            android:name=".detailItem.ItemDetailActivity"
             android:exported="false"
             android:theme="@style/Theme.Mm.NoActionbar" />
         <activity

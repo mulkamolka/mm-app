@@ -1,4 +1,4 @@
-package com.mm.android.itemdetail.normal.fragment
+package com.mm.android.detailItem.normal.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

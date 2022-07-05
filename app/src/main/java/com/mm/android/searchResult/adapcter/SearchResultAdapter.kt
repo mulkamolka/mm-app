@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.mm.android.databinding.ItemRecyclerBinding
-import com.mm.android.itemdetail.ItemDetailActivity
-import com.mm.android.itemdetail.data.DetailItemListResponse
-import com.mm.android.itemdetail.data.ItemNewsResponse
+import com.mm.android.detailItem.ItemDetailActivity
+import com.mm.android.detailItem.data.DetailItemListResponse
+import com.mm.android.detailItem.data.ItemNewsResponse
 import com.mm.android.retrofit.RetrofitConnection
 import com.mm.android.retrofit.RetrofitService
 import com.mm.android.searchResult.data.ItemRank

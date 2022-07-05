@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".itemdetail.town.fragment.news.NewsDetailActivity">
+    tools:context=".detailItem.town.fragment.news.NewsDetailActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView12"
-        android:name="com.mm.android.itemdetail.normal.fragment.WebviewOptionFragment"
+        android:name="com.mm.android.detailItem.normal.fragment.WebviewOptionFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline22"
@@ -19,7 +19,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView13"
-        android:name="com.mm.android.itemdetail.normal.fragment.WebviewFragment"
+        android:name="com.mm.android.detailItem.normal.fragment.WebviewFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
