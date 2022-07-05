@@ -6,11 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".home.fragment.HomeCategoryFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:id="@+id/agric_category"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="2.5dp"
+        android:layout_marginBottom="2.5dp"
+        android:background="@drawable/category_view_outline"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,36 +20,38 @@
 
         <ImageView
             android:id="@+id/agric_image"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/agric_icon"
-            app:layout_constraintBottom_toTopOf="@+id/agric_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/agric_icon" />
 
         <TextView
-            android:id="@+id/agric_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="bottom|center_horizontal"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/category_name_view_outline"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
             android:text="농산물"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/agric_image" />
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
+    </FrameLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:id="@+id/sea_category"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="2.5dp"
+        android:layout_marginBottom="2.5dp"
+        android:background="@drawable/category_view_outline"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
@@ -55,37 +59,40 @@
 
         <ImageView
             android:id="@+id/sea_image"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/sea_icon"
-            app:layout_constraintBottom_toTopOf="@+id/sea_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/sea_icon" />
 
         <TextView
-            android:id="@+id/sea_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="bottom|center_horizontal"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:background="@drawable/category_name_view_outline"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
             android:text="수산물"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sea_image" />
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:id="@+id/livestock_category"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="2.5dp"
+        android:layout_marginTop="2.5dp"
+        android:background="@drawable/category_view_outline"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,41 +100,54 @@
 
         <ImageView
             android:id="@+id/livestock_image"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/livestock_icon"
-            app:layout_constraintBottom_toTopOf="@+id/livestock_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:src="@drawable/livestock_icon" />
 
         <TextView
-            android:id="@+id/livestock_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="bottom|center_horizontal"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/category_name_view_outline"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
             android:text="축산물"
-            android:textColor="@color/black"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/livestock_image" />
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/empty_category"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="2.5dp"
+        android:layout_marginTop="2.5dp"
+        android:background="@drawable/category_view_outline"
         app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/sea_category">
 
+        <TextView
+            android:id="@+id/soon_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="COMMING SOON!"
+            android:textColor="#8090BF48"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
