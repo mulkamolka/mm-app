@@ -1,6 +1,5 @@
-package com.mm.android.itemdetail.adapter
+package com.mm.android.detailItem.adapter
 
-import android.app.Activity
 import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,8 +8,8 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.mm.android.databinding.DetailMarketsItemRecyclerBinding
 import com.mm.android.databinding.FragmentItemDetailTownMapBinding
-import com.mm.android.itemdetail.data.Markets
-import com.mm.android.itemdetail.data.MultiListType
+import com.mm.android.detailItem.data.Markets
+import com.mm.android.detailItem.data.MultiListType
 import net.daum.mf.map.api.MapPOIItem
 import net.daum.mf.map.api.MapPoint
 import net.daum.mf.map.api.MapView
@@ -63,7 +62,7 @@ class ItemDetailTownAdapter(activity: FragmentActivity?) : RecyclerView.Adapter<
         when (holder.itemViewType) {
             MultiListType.TYPE_A -> {
                 Log.d("test onBindViewHolder", "TYPE_A ${position}")
-                holder.setMap(activity!!)
+//                holder.setMap(activity!!)
             }
             MultiListType.TYPE_B -> {
                 Log.d("test onBindViewHolder", "TYPE_ B${position}")

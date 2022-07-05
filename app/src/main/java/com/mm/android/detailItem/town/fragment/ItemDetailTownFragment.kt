@@ -1,6 +1,5 @@
-package com.mm.android.itemdetail.town.fragment
+package com.mm.android.detailItem.town.fragment
 
-import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mm.android.databinding.FragmentItemDetailTownBinding
-import com.mm.android.itemdetail.adapter.ItemDetailTownAdapter
-import com.mm.android.itemdetail.data.Markets
-import com.mm.android.itemdetail.data.MultiListType
+import com.mm.android.detailItem.adapter.ItemDetailTownAdapter
+import com.mm.android.detailItem.data.Markets
+import com.mm.android.detailItem.data.MultiListType
 import java.time.LocalDate
 
 class ItemDetailTownFragment : Fragment() {

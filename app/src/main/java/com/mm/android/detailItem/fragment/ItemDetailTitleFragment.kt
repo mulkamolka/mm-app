@@ -1,6 +1,5 @@
-package com.mm.android.itemdetail.fragment
+package com.mm.android.detailItem.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,10 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.mm.android.R
-import com.mm.android.home.MainActivity
 import com.mm.android.databinding.FragmentItemDetailTitleBinding
-import com.mm.android.itemdetail.data.DetailItem
-import com.mm.android.searchResult.data.ItemRank
+import com.mm.android.detailItem.data.DetailItem
 
 class ItemDetailTitleFragment : Fragment() {
 
