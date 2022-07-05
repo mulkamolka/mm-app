@@ -16,9 +16,13 @@ class SearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val itemRankListData = intent.getSerializableExtra("itemRankListData") as ArrayList<ItemRank>
-        Log.d("test itemRankListData", "${itemRankListData}")
+        setToResultListData()
+    }
 
+    private fun setToResultListData() {
+        val itemRankListData =
+            intent.getSerializableExtra("itemRankListData") as ArrayList<ItemRank>
+        Log.d("test itemRankListData", "${itemRankListData}")
         val bundle = Bundle()
         val fragment = SearchResultFragment()
         val transaction = supportFragmentManager.beginTransaction()
