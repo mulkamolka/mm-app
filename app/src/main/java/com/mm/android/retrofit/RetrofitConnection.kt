@@ -9,23 +9,42 @@ import java.util.concurrent.TimeUnit
 class RetrofitConnection {
 
     companion object {
-        private const val BASE_URL = "http://15.165.161.133:8080/"
-        private var INSTANCE: Retrofit? = null
+        private const val BASE_URL_BACK = "http://34.125.36.102:8080/"
+        private const val BASE_URL_DATA = "http://34.125.36.102:8000/"
+        private var INSTANCE_BACK: Retrofit? = null
+        private var INSTANCE_DATA: Retrofit? = null
 
-        fun getInstance(): Retrofit {
-            if (INSTANCE == null) {
+
+        fun getInstanceBack(): Retrofit {
+            if (INSTANCE_BACK == null) {
                 val okHttpClient = OkHttpClient.Builder()
                     .readTimeout(1, TimeUnit.MINUTES)
                     .build()
 
 
-                INSTANCE = Retrofit.Builder()
-                    .baseUrl(BASE_URL)
+                INSTANCE_BACK = Retrofit.Builder()
+                    .baseUrl(BASE_URL_BACK)
                     .client(okHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
             }
-            return INSTANCE!!
+            return INSTANCE_BACK!!
+        }
+
+        fun getInstanceData(): Retrofit {
+            if (INSTANCE_DATA == null) {
+                val okHttpClient = OkHttpClient.Builder()
+                    .readTimeout(1, TimeUnit.MINUTES)
+                    .build()
+
+
+                INSTANCE_DATA = Retrofit.Builder()
+                    .baseUrl(BASE_URL_DATA)
+                    .client(okHttpClient)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build()
+            }
+            return INSTANCE_DATA!!
         }
 
     }
