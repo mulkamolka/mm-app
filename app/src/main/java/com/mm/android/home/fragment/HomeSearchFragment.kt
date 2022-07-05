@@ -49,7 +49,7 @@ class HomeSearchFragment : Fragment() {
     }
 
     private fun getAllItemRank(intent: Intent) {
-        val retrofitAPI = RetrofitConnection.getInstance().create(RetrofitService::class.java)
+        val retrofitAPI = RetrofitConnection.getInstanceBack().create(RetrofitService::class.java)
 
         retrofitAPI.getAllItemRankData()
             .enqueue(object : Callback<AllItemRankListResponse> {

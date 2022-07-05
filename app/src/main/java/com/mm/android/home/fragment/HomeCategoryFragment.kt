@@ -71,7 +71,7 @@ class HomeCategoryFragment : Fragment() {
     }
 
     private fun getCategoryItemRank(intent: Intent, category: String) {
-        val retrofitAPI = RetrofitConnection.getInstance().create(RetrofitService::class.java)
+        val retrofitAPI = RetrofitConnection.getInstanceBack().create(RetrofitService::class.java)
 
         retrofitAPI.getCategoryItemRankData(category)
             .enqueue(object : Callback<CategoryItemRankListResponse> {
