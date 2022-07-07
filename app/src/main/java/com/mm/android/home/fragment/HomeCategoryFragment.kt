@@ -7,14 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.mm.android.searchResult.CategoryAActivity
-import com.mm.android.searchResult.CategoryBActivity
-import com.mm.android.searchResult.CategoryCActivity
-import com.mm.android.searchResult.CategoryDActivity
 import com.mm.android.searchResult.data.CategoryItemRankListResponse
 import com.mm.android.databinding.FragmentHomeCategoryBinding
 import com.mm.android.retrofit.RetrofitService
 import com.mm.android.retrofit.RetrofitConnection
+import com.mm.android.searchResult.*
 import com.mm.android.sub.DialogActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -38,27 +35,24 @@ class HomeCategoryFragment : Fragment() {
 
         binding.agricCategory.setOnClickListener {
             dialog.show()
-            val intent = Intent(activity, CategoryAActivity::class.java)
+            val intent = Intent(activity, SearchActivity::class.java)
             getCategoryItemRank(intent, "agric")
         }
 
 
         binding.seaCategory.setOnClickListener {
-            val intent = Intent(activity, CategoryBActivity::class.java)
-//            getCategoryItemRank(intent, binding.categoryB.text.toString())
-//            startActivity(intent)
+            val intent = Intent(activity, SearchActivity::class.java)
+//            getCategoryItemRank(intent, "agric")
         }
 
         binding.livestockCategory.setOnClickListener {
-            val intent = Intent(activity, CategoryCActivity::class.java)
-//            getCategoryItemRank(intent, binding.categoryC.text.toString())
-//            startActivity(intent)
+            val intent = Intent(activity, SearchActivity::class.java)
+//            getCategoryItemRank(intent, "agric")
         }
 
         binding.emptyCategory.setOnClickListener {
-            val intent = Intent(activity, CategoryDActivity::class.java)
-//            getCategoryItemRank(intent, binding.categoryD.text.toString())
-//            startActivity(intent)
+            val intent = Intent(activity, SearchActivity::class.java)
+//            getCategoryItemRank(intent, "agric")
         }
 
         return view
