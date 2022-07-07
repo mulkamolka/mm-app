@@ -31,8 +31,7 @@ class WebviewOptionFragment : Fragment() {
             val intent = Intent(activity, ItemDetailActivity::class.java)
 
             // 스택 정리
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
+            activity?.finish()
         }
 
         binding.newsTitle.text = title
