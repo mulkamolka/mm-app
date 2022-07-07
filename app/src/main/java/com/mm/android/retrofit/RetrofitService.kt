@@ -3,7 +3,8 @@ package com.mm.android.retrofit
 import com.mm.android.searchResult.data.AllItemRankListResponse
 import com.mm.android.searchResult.data.CategoryItemRankListResponse
 import com.mm.android.detailItem.data.DetailItemListResponse
-import com.mm.android.detailItem.data.ItemNewsResponse
+import com.mm.android.detailItem.data.ItemNewsListResponse
+import com.mm.android.detailItem.data.ItemPriceListResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -22,13 +23,13 @@ interface RetrofitService {
     @GET("list/3/1/{pGroup}") // URI 주소 입력 필요
     fun getDetailItemList(@Path("pGroup") pGroup:String) : Call<DetailItemListResponse>
 
-//    // Detail Item Price
-//    @POST("/list/3/2/{cCode}") // URI 주소 입력 필요
-//    fun getDetailItemPricekData(@Path("cCode") cCode:String) : Call<ItemRankListResponse>
+    // Detail Item Price
+    @GET("/list/3/2/{cCode}") // URI 주소 입력 필요
+    fun getDetailItemPricekData(@Path("cCode") cCode:String) : Call<ItemPriceListResponse>
 
     // Detail Item News
     @GET("api/search/{pGroup}") // URI 주소 입력 필요
-    fun getDetailItemNews(@Path("pGroup") pGroup:String) : Call<ItemNewsResponse>
+    fun getDetailItemNews(@Path("pGroup") pGroup:String) : Call<ItemNewsListResponse>
 
 //    // Market Lat, Long
 //    @POST("/list/5/{latuitude, longitude}") // URI 주소 입력 필요
