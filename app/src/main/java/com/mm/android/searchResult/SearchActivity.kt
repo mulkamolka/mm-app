@@ -15,11 +15,10 @@ class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-        setToResultListData()
+        setToItemRankData()
     }
 
-    private fun setToResultListData() {
+    private fun setToItemRankData() {
         val itemRankListData =
             intent.getSerializableExtra("itemRankListData") as ArrayList<ItemRank>
         Log.d("test itemRankListData", "${itemRankListData}")
