@@ -153,7 +153,7 @@ class ItemDetailNormalAdapter : RecyclerView.Adapter<ItemDetailNormalAdapter.Hol
             lineData.addDataSet(lineDataSet) // 생성한 라인 넣기
             lineData.setValueTextColor(Color.rgb(144, 191, 72)) // 라인 데이터 텍스트 컬러 설정
             lineData.setValueTextSize(12F) // 텍스트 크기 설정
-            lineData.setValueFormatter(MaxMinValueFormat(lineData.yMax, lineData.yMin, priceList)) // 데이터 재가공 및 레이블 표시
+            lineData.setValueFormatter(MaxMinValueFormat(lineData.yMax, lineData.yMin)) // 데이터 재가공 및 레이블 표시
 
             // X축 설정
             val xAxis = lineChart.xAxis
