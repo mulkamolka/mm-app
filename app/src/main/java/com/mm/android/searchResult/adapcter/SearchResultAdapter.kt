@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mm.android.databinding.ItemRecyclerBinding
 import com.mm.android.detailItem.ItemDetailActivity
 import com.mm.android.detailItem.data.DetailItemListResponse
-import com.mm.android.detailItem.data.ItemNewsResponse
+import com.mm.android.detailItem.data.ItemNewsListResponse
+import com.mm.android.detailItem.data.ItemPriceListResponse
 import com.mm.android.retrofit.RetrofitConnection
 import com.mm.android.retrofit.RetrofitService
 import com.mm.android.searchResult.data.ItemRank
@@ -24,6 +25,7 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
     lateinit var listData: ArrayList<ItemRank>
     var detailItemOk = false
     var itemNewsOk = false
+    var ItemPriceOk = false
     var bundle = Bundle()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -37,16 +39,16 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        val market = listData.get(position)
+        var market = listData.get(position)
         holder.setMarket(market)
-        val percent = holder.binding.changeText.text.toString()
+        var percent = holder.binding.changeText.text.toString()
 
         // 변동률에 따른 색상 변경
-        if (percent.replace("%","").toDouble() < 0) {
-            holder.binding.changeText.setTextColor(Color.rgb(81,107,244))
+        if (percent.replace("%", "").toDouble() < 0) {
+            holder.binding.changeText.setTextColor(Color.rgb(81, 107, 244))
             holder.binding.changeImage.setColorFilter(Color.parseColor("#E8F2FF"))
         } else {
-            holder.binding.changeText.setTextColor(Color.rgb(244,81,81))
+            holder.binding.changeText.setTextColor(Color.rgb(244, 81, 81))
             holder.binding.changeImage.setColorFilter(Color.parseColor("#FFE8E8"))
         }
     }
@@ -66,13 +68,10 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
             val context = parent.context
 
             binding.root.setOnClickListener {
-                val intent = Intent(context, ItemDetailActivity::class.java)
+                var intent = Intent(context, ItemDetailActivity::class.java)
 
 //              액티비티로 인텐트 전달, adapterposition - 리싸이클러뷰에서 제공하는 위치 제공 메소드, https://velog.io/@appletorch/%EB%A6%AC%EC%82%AC%EC%9D%B4%ED%81%B4%EB%9F%AC%EB%B7%B0-%EC%95%84%EC%9D%B4%ED%85%9C-%ED%81%B4%EB%A6%AD-%EC%9D%B4%EB%B2%A4%ED%8A%B8
-                val pGroup = listData.get(adapterPosition).pgroupName!!
-
-
-                // 로딩화면 생성
+                var pGroup = listData.get(adapterPosition).pgroupName!!
 
                 // retrofit 통신 보내기
                 Log.d("test pGroup", "$pGroup")
@@ -92,8 +91,9 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
         }
 
         // 세부 품목 받아오기
-        private fun getDetailItem(intent: Intent, pGroup: String, parent:ViewGroup) {
-            val retrofitAPI = RetrofitConnection.getInstanceBack().create(RetrofitService::class.java)
+        private fun getDetailItem(intent: Intent, pGroup: String, parent: ViewGroup) {
+            var retrofitAPI =
+                RetrofitConnection.getInstanceBack().create(RetrofitService::class.java)
 
             retrofitAPI.getDetailItemList(pGroup)
                 .enqueue(object : Callback<DetailItemListResponse> {
@@ -104,42 +104,50 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
                         dialog.show()
                         if (response.isSuccessful) {
                             val data = response.body()
+                            detailItemOk = true
                             Log.d("test data", "$data")
+                            Log.d("test cCode", "${data!![0].categoryCode}")
                             intent.putExtra("itemDetailListData", data)
                             intent.putExtra("pGroup", pGroup)
-                            if(detailItemOk && itemNewsOk) {
-                                dialog.dismiss()
-                                parent.context.startActivity(intent)
-                            }
+                            getItemPrice(intent, data!![0].categoryCode, parent)
+//                            if(detailItemOk && itemNewsOk) {
+//                                dialog.dismiss()
+//                                parent.context.startActivity(intent)
+//                            }
                         } else {
-                            Toast.makeText(parent.context, "랭킹 서비스 실행 실패", Toast.LENGTH_LONG).show()
+                            Toast.makeText(parent.context, "품목 서비스 실행 실패", Toast.LENGTH_LONG).show()
                         }
 
                     }
 
                     override fun onFailure(call: Call<DetailItemListResponse>, t: Throwable) {
                         t.printStackTrace()
-                        Toast.makeText(parent.context, "랭킹 서비스 실행 실패", Toast.LENGTH_LONG).show()
+                        Toast.makeText(parent.context, "품목 서비스 실행 실패", Toast.LENGTH_LONG).show()
                     }
                 })
         }
 
         // 뉴스 데이터 받아오기
-        private fun getItemNews(intent: Intent, pGroup: String, parent:ViewGroup) {
-            val retrofitAPI = RetrofitConnection.getInstanceData().create(RetrofitService::class.java)
+        private fun getItemNews(intent: Intent, pGroup: String, parent: ViewGroup) {
+            var retrofitAPI =
+                RetrofitConnection.getInstanceData().create(RetrofitService::class.java)
 
             retrofitAPI.getDetailItemNews(pGroup)
-                .enqueue(object : Callback<ItemNewsResponse> {
+                .enqueue(object : Callback<ItemNewsListResponse> {
                     override fun onResponse(
-                        call: Call<ItemNewsResponse>,
-                        response: Response<ItemNewsResponse>
+                        call: Call<ItemNewsListResponse>,
+                        listResponse: Response<ItemNewsListResponse>
                     ) {
                         dialog.show()
-                        if (response.isSuccessful) {
-                            val data = response.body()
+                        if (listResponse.isSuccessful) {
+                            val data = listResponse.body()
+                            itemNewsOk = true
                             Log.d("test data", "$data")
                             intent.putExtra("itemNewsListData", data)
-                            if(detailItemOk && itemNewsOk) {
+                            if (ItemPriceOk) {
+                                ItemPriceOk = false
+                                itemNewsOk = false
+                                detailItemOk = false
                                 dialog.dismiss()
                                 parent.context.startActivity(intent)
                             }
@@ -149,9 +157,47 @@ class SearchResultAdapter : RecyclerView.Adapter<SearchResultAdapter.Holder>() {
 
                     }
 
-                    override fun onFailure(call: Call<ItemNewsResponse>, t: Throwable) {
+                    override fun onFailure(call: Call<ItemNewsListResponse>, t: Throwable) {
                         t.printStackTrace()
                         Toast.makeText(parent.context, "뉴스 서비스 실행 실패", Toast.LENGTH_LONG).show()
+                    }
+                })
+        }
+
+        // 가격 데이터 받아오기
+        private fun getItemPrice(intent: Intent, cCode: String?, parent: ViewGroup) {
+            var retrofitAPI =
+                RetrofitConnection.getInstanceBack().create(RetrofitService::class.java)
+
+            retrofitAPI.getDetailItemPricekData(cCode!!)
+                .enqueue(object : Callback<ItemPriceListResponse> {
+                    override fun onResponse(
+                        call: Call<ItemPriceListResponse>,
+                        response: Response<ItemPriceListResponse>
+                    ) {
+                        dialog.show()
+                        if (response.isSuccessful) {
+                            ItemPriceOk = true
+                            val data = response.body()
+                            intent.putExtra("DetailPriceListData", data)
+                            Log.d("test getItemPrice", "${data}")
+                            if (itemNewsOk) {
+                                ItemPriceOk = false
+                                itemNewsOk = false
+                                detailItemOk = false
+                                dialog.dismiss()
+                                parent.context.startActivity(intent)
+                            }
+                        } else {
+                            Toast.makeText(parent.context, "그래프 서비스 실행 실패", Toast.LENGTH_LONG)
+                                .show()
+                        }
+
+                    }
+
+                    override fun onFailure(call: Call<ItemPriceListResponse>, t: Throwable) {
+                        t.printStackTrace()
+                        Toast.makeText(parent.context, "그래프 서비스 실행 실패", Toast.LENGTH_LONG).show()
                     }
                 })
         }
