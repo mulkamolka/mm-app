@@ -5,4 +5,5 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class ItemRank(
-    var rankNum: Int?, var pgroupName: String?, var percentage: String?) : Parcelable
+    var rankNum: Int?, var pgroupName: String?, var percentage: String?
+) : Parcelable
